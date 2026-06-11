@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IKAMABA Hub — Platform digital resmi organisasi IKAMABA. Pusat informasi, kegiatan, event, artikel, dan merchandise mahasiswa Batak.">
+  <title>IKAMABA</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/ikamaba.css">
+
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logo.png" alt="IKAMABA Logo">
+        <span>IKAMABA</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#beranda" class="nav-link active">Beranda</a>
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#event" class="nav-link">Event</a>
+        <a href="merch.html" class="nav-link">Merch</a>
+        
+      </div>
+
+      <div class="nav-actions">
+        <a href="keranjang.html" class="nav-cart-btn" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" style="display:none;">0</span>
+        </a>
+        <a href="admin/login.html" class="btn btn-primary btn-sm hide-tablet">Login</a>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#beranda" class="nav-link active">Beranda</a>
+    <a href="#tentang" class="nav-link">Tentang</a>
+    <a href="#event" class="nav-link">Event</a>
+    <a href="merch.html" class="nav-link">Merch</a>
+    
+    <a href="admin/login.html" class="btn btn-primary" style="margin-top:1rem;">Login</a>
+  </div>
+
+
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="hero" id="beranda">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Platform Resmi IKAMABA
+        </div>
+
+        <h1 class="hero-title">
+          Bersatu.<br>
+          Berkarya.<br>
+          <span class="accent">Berdampak.</span>
+        </h1>
+
+        <p class="hero-desc">
+          IKAMABA adalah wadah mahasiswa Batak untuk berkolaborasi, berkembang, dan memberikan kontribusi positif bagi masyarakat dan budaya.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#tentang" class="btn btn-primary btn-lg">
+            Tentang IKAMABA
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#event" class="btn btn-secondary btn-lg">Lihat Event</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value">500+</div>
+            <div class="hero-stat-label">Anggota Aktif</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">+20</div>
+            <div class="hero-stat-label">Tahun Berdiri</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-decoration"></div>
+        <div class="hero-decoration"></div>
+        <img src="assets/img/hero_ikamaba.JPG" class="hero-image-main" id="heroImage" alt="Hero IKAMABA">
+        <div class="hero-float-card card-1">
+          <div class="hero-float-card-label">Event Mendatang</div>
+          <div class="hero-float-card-value">Malam Keakraban 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ TENTANG KAMI ═══ -->
+  <div id="tentang">
+    <section class="about-section section bg-pattern">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:var(--space-12);align-items:center;">
+
+          <!-- Kiri: Logo IKAMABA -->
+          <div class="reveal" style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--maroon),var(--maroon-dark));border-radius:var(--radius-xl);padding:var(--space-12) var(--space-8);gap:var(--space-4);">
+            <img src="assets/img/logo.png" alt="Logo IKAMABA" style="width:120px;height:120px;object-fit:contain;">
+            <div style="color:var(--gold-light);font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:800;letter-spacing:0.05em;">IKAMABA</div>
+            <div style="color:rgba(255,255,255,0.65);font-size:var(--text-xs);font-family:var(--font-accent);text-align:center;line-height:1.6;">Ikatan Mahasiswa Batak Universitas Airlangga</div>
+          </div>
+
+          <!-- Kanan: Deskripsi -->
+          <div class="reveal">
+            <span class="section-label">Siapa Kami</span>
+            <h3 style="margin-top:var(--space-3);">Bersatu dalam Keberagaman, Berkarya untuk Bangsa</h3>
+            <p style="color:var(--gray-600);line-height:1.8;margin-top:var(--space-4);">
+              IKAMABA (Ikatan Mahasiswa Batak) adalah organisasi kemahasiswaan yang didirikan pada tahun 2015 sebagai wadah bagi mahasiswa keturunan Batak di berbagai perguruan tinggi untuk saling berkoneksi, mengembangkan potensi, dan melestarikan kekayaan budaya Batak.
+            </p>
+            <div style="background:var(--maroon-50);border-left:4px solid var(--maroon);border-radius:var(--radius-sm);padding:var(--space-4) var(--space-5);margin:var(--space-5) 0;font-style:italic;color:var(--maroon);font-size:var(--text-sm);line-height:1.7;">
+              "Horas! Kami percaya bahwa persatuan dan kebudayaan adalah fondasi untuk membangun generasi Batak yang kuat, berdaya, dan berdampak bagi masyarakat."
+            </div>
+            <p style="color:var(--gray-600);line-height:1.8;">
+              Dengan lebih dari 500 anggota aktif dari berbagai universitas, IKAMABA telah menjadi komunitas yang kuat dalam mendorong kolaborasi lintas kampus, mengadakan event kebudayaan, serta memberikan kontribusi sosial nyata bagi masyarakat.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VISI & MISI ═══ -->
+    <section class="visimisi-section section" style="background:var(--white);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Visi & Misi</span>
+          <h2>Arah & Tujuan Kami</h2>
+          <p>Landasan yang memandu setiap langkah dan program kerja IKAMABA dalam berkarya dan berdampak.</p>
+        </div>
+
+        <!-- Visi Card -->
+        <div class="visi-card reveal" style="background:var(--cream);padding:var(--space-8);border-radius:var(--radius-xl);margin-bottom:var(--space-8);text-align:center;">
+          <div class="visi-card-content">
+            <div class="visi-card-icon" style="font-size:3rem;margin-bottom:var(--space-4);">🔭</div>
+            <h3>Visi Kami</h3>
+            <p>Menjadi organisasi mahasiswa Batak terdepan yang mencetak generasi berkarakter kuat, berbudaya, dan berdaya saing global, serta menjadi jembatan antara tradisi dan modernitas demi kemajuan bangsa.</p>
+          </div>
+        </div>
+
+        <!-- Misi Cards -->
+        <div class="misi-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:var(--space-6);">
+          <div class="misi-card reveal stagger-1" style="border:1px solid var(--gray-200);padding:var(--space-6);border-radius:var(--radius-lg);">
+            <div class="misi-card-number" style="font-size:2rem;font-weight:bold;color:var(--maroon);margin-bottom:var(--space-4);">1</div>
+            <h4>Pelestarian Budaya</h4>
+            <p>Melestarikan dan memperkenalkan kekayaan budaya Batak melalui kegiatan seni, musik, tari, dan tradisi adat.</p>
+          </div>
+
+          <div class="misi-card reveal stagger-2" style="border:1px solid var(--gray-200);padding:var(--space-6);border-radius:var(--radius-lg);">
+            <div class="misi-card-number" style="font-size:2rem;font-weight:bold;color:var(--maroon);margin-bottom:var(--space-4);">2</div>
+            <h4>Pengembangan SDM</h4>
+            <p>Meningkatkan kualitas sumber daya manusia anggota melalui pelatihan, workshop, seminar, dan mentoring.</p>
+          </div>
+
+          <div class="misi-card reveal stagger-3" style="border:1px solid var(--gray-200);padding:var(--space-6);border-radius:var(--radius-lg);">
+            <div class="misi-card-number" style="font-size:2rem;font-weight:bold;color:var(--maroon);margin-bottom:var(--space-4);">3</div>
+            <h4>Jaringan & Kolaborasi</h4>
+            <p>Membangun jaringan yang kuat antar mahasiswa, alumni, dan komunitas Batak di seluruh Indonesia.</p>
+          </div>
+
+          <div class="misi-card reveal stagger-4" style="border:1px solid var(--gray-200);padding:var(--space-6);border-radius:var(--radius-lg);">
+            <div class="misi-card-number" style="font-size:2rem;font-weight:bold;color:var(--maroon);margin-bottom:var(--space-4);">4</div>
+            <h4>Kontribusi Sosial</h4>
+            <p>Memberikan kontribusi positif bagi masyarakat melalui kegiatan sosial dan pengabdian masyarakat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══ SEMUA EVENT ═══ -->
+  <section class="events-section section" id="event">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Event</span>
+        <h2>Event IKAMABA</h2>
+        <p>Jadwal dan rekap semua kegiatan yang diselenggarakan oleh IKAMABA.</p>
+      </div>
+
+      <div class="events-grid">
+        <a href="detail-event.html?id=1" class="event-card reveal stagger-1">
+          <div class="event-card-img">
+
+            <img src="assets/img/welpart.jpg" alt="Welpart" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              15 Sep 2026
+            </div>
+            <h4 class="event-card-title">Welcoming Party (Welpart)</h4>
+            <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">Acara penyambutan mahasiswa baru IKAMABA angkatan 2026 dengan berbagai penampilan menarik.</p>
+          </div>
+        </a>
+
+        <a href="detail-event.html?id=2" class="event-card reveal stagger-2">
+          <div class="event-card-img">
+
+            <img src="assets/img/hero_ikamaba.JPG" alt="Grand Launching" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              06 Juni 2026
+            </div>
+            <h4 class="event-card-title">Grand Launching Pengurus</h4>
+            <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">Pelantikan dan perkenalan kabinet kepengurusan IKAMABA periode 2026-2027.</p>
+          </div>
+        </a>
+
+        <a href="detail-event.html?id=3" class="event-card reveal stagger-3">
+          <div class="event-card-img">
+
+            <img src="assets/img/raker.jpg" alt="Rapat Kerja" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+          </div>
+          <div class="event-card-body">
+            <div class="event-card-date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              23  Mei 2026
+            </div>
+            <h4 class="event-card-title">Rapat Kerja</h4>
+            <p style="font-size:var(--text-sm);color:var(--gray-500);margin:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">Rapat kerja kepengurusan IKAMABA untuk membahas program kerja satu periode ke depan.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ GALERI KEGIATAN ═══ -->
+  <section class="gallery-section section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Galeri</span>
+        <h2>Galeri Kegiatan</h2>
+        <p>Momen-momen berharga dari berbagai kegiatan dan program IKAMABA.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img src="assets/img/kegiatan1.webp" alt="Kegiatan IKAMABA 1" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-lg);">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/kegiatan2.webp" alt="Kegiatan IKAMABA 2" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-lg);">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/kegiatan3.webp" alt="Kegiatan IKAMABA 3" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-lg);">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/kegiatan4.webp" alt="Kegiatan IKAMABA 4" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-lg);">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/kegiatan5.webp" alt="Kegiatan IKAMABA 5" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-lg);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ MERCHANDISE PREVIEW ═══ -->
+  <section class="merch-section section" id="merch">
+    <div class="container">
+      <div class="events-header reveal">
+        <div class="section-header">
+          <span class="section-label">Store</span>
+          <h2>Merchandise Resmi</h2>
+          <p>Koleksi merchandise eksklusif IKAMABA  — tunjukkan kebanggaanmu!</p>
+        </div>
+        <a href="merch.html" class="btn btn-secondary">
+          Lihat Semua
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="merch-grid">
+        <a href="detail-produk.html" class="product-card reveal stagger-1">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/hoodie.png" alt="Hoodie IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-maroon">Baru</span>
+            <button class="product-card-wishlist" aria-label="Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Merch IKAMABA</div>
+            <h4 class="product-card-title">Hoodie IKAMABA</h4>
+            <div class="product-card-price">Rp 250.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html" class="product-card reveal stagger-2">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/kaos.jpg" alt="Kaos Polo IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <button class="product-card-wishlist" aria-label="Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Merch IKAMABA</div>
+            <h4 class="product-card-title">Kaos Polo IKAMABA</h4>
+            <div class="product-card-price">Rp 120.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html" class="product-card reveal stagger-3">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/totebag.png" alt="Totebag IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <button class="product-card-wishlist" aria-label="Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Aksesoris</div>
+            <h4 class="product-card-title">Totebag IKAMABA</h4>
+            <div class="product-card-price">Rp 85.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html" class="product-card reveal stagger-4">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/lanyard.jpg" alt="Lanyard IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-gold">Terlaris</span>
+            <button class="product-card-wishlist" aria-label="Wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Aksesoris</div>
+            <h4 class="product-card-title">Lanyard IKAMABA</h4>
+            <div class="product-card-price">Rp 35.000</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ KONTAK / PARTNERSHIP ═══ -->
+  <section class="contact-section section" id="kontak" style="background:var(--cream);text-align:center;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Hubungi Kami</span>
+        <h2>External Partnership</h2>
+        <p>Mari berkolaborasi dan bekerja sama dengan IKAMABA. Hubungi kami melalui kontak di bawah ini.</p>
+      </div>
+      <div class="contact-icons reveal" style="display:flex;justify-content:center;gap:var(--space-8);margin-top:var(--space-8);">
+        <a href="https://www.instagram.com/ikamaba.unair?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="contact-icon-card" aria-label="Instagram" style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2);color:var(--gray-700);font-weight:600;text-decoration:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--maroon);"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="contact-icon-card" aria-label="LinkedIn" style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2);color:var(--gray-700);font-weight:600;text-decoration:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--maroon);"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://wa.me/6281292932493/" target="_blank" class="contact-icon-card" aria-label="WhatsApp" style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2);color:var(--gray-700);font-weight:600;text-decoration:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--maroon);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-logo" style="color:var(--white);">
+            <img src="assets/img/logo.svg" alt="IKAMABA">
+            <span>IKAMABA</span>
+          </a>
+          <p>Platform digital resmi organisasi IKAMABA. Wadah mahasiswa Batak untuk bersatu, berkarya, dan berdampak positif.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigasi</h4>
+          <div class="footer-links">
+            <a href="index.html">Beranda</a>
+            <a href="#tentang">Tentang IKAMABA</a>
+            <a href="#event">Event</a>
+            <a href="merch.html">Merch</a>
+            
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Bantuan</h4>
+          <div class="footer-links">
+            <a href="#">FAQ</a>
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat & Ketentuan</a>
+            <a href="#">Kontak</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 IKAMABA. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══ Mobile Bottom Nav ═══ -->
+  <nav class="bottom-nav" id="bottomNav">
+    <a href="index.html" class="bottom-nav-item active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Beranda
+    </a>
+    <a href="#event" class="bottom-nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Event
+    </a>
+    <a href="merch.html" class="bottom-nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Merch
+    </a>
+    
+    <a href="#" class="bottom-nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Akun
+    </a>
+  </nav>
+
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

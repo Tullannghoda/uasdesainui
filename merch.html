@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Katalog Produk IKAMABA — Merchandise resmi, dan aksesoris eksklusif komunitas mahasiswa Batak.">
+  <title>Katalog Produk — IKAMABA Hub</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/ikamaba.css">
+
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar navbar-dark" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logo.svg" alt="IKAMABA Logo">
+        <span>IKAMABA</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="index.html#tentang" class="nav-link">Tentang</a>
+        <a href="index.html#event" class="nav-link">Event</a>
+        <a href="merch.html" class="nav-link active">Merch</a>
+        
+      </div>
+
+      <div class="nav-actions">
+
+        <a href="keranjang.html" class="nav-cart-btn" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" style="display:none;">0</span>
+        </a>
+        <a href="admin/login.html" class="btn btn-primary btn-sm hide-tablet">Login</a>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <a href="index.html#tentang" class="nav-link">Tentang</a>
+    <a href="index.html#event" class="nav-link">Event</a>
+    <a href="merch.html" class="nav-link active">Merch</a>
+    
+    <a href="admin/login.html" class="btn btn-primary" style="margin-top:1rem;">Login</a>
+  </div>
+
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span class="separator">/</span>
+        <span class="current">Store</span>
+      </nav>
+      <h1>Katalog Produk</h1>
+      <p>Temukan merchandise resmi IKAMABA, berbagai aksesoris eksklusif yang menunjukkan kebanggaan Batak-mu!</p>
+    </div>
+  </section>
+
+
+  <!-- ═══ KATALOG / STORE ═══ -->
+  <section class="section" style="background: var(--cream);">
+    <div class="container">
+
+      <!-- Search Bar -->
+      <div class="merch-search-row reveal">
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="form-input" id="searchInput" placeholder="Cari produk, tiket, atau merchandise...">
+        </div>
+      </div>
+
+      <!-- Toolbar: Tabs + Sort -->
+      <div class="merch-toolbar reveal">
+        <div class="tabs" id="categoryTabs">
+                    <button class="tab-btn active" data-filter="semua">Semua</button>
+          <button class="tab-btn" data-filter="Kaos">Kaos</button>
+          <button class="tab-btn" data-filter="Hoodie">Hoodie</button>
+          <button class="tab-btn" data-filter="Aksesoris">Aksesoris</button>
+        </div>
+
+        <div class="merch-sort">
+          <label for="sortSelect">Urutkan:</label>
+          <select class="form-select" id="sortSelect">
+            <option value="terbaru">Terbaru</option>
+            <option value="harga-tinggi">Harga Tertinggi</option>
+            <option value="harga-rendah">Harga Terendah</option>
+            <option value="terlaris">Terlaris</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Result Info -->
+      <div class="merch-result-info reveal" id="resultInfo">
+        Menampilkan <strong>8</strong> produk
+      </div>
+
+      <!-- Product Grid -->
+      <div class="merch-products-grid" id="productGrid">
+
+        <a href="detail-produk.html?id=1" class="product-card reveal stagger-1" data-category="Hoodie" data-price="250000" data-date="2026-05-01" data-sold="120">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/hoodie.png" alt="Hoodie IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-maroon">Baru</span>
+            <button class="product-card-wishlist" aria-label="Wishlist" onclick="event.preventDefault();">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Hoodie</div>
+            <h4 class="product-card-title">Hoodie IKAMABA</h4>
+            <div class="product-card-price">Rp 250.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html?id=2" class="product-card reveal stagger-2" data-category="Kaos" data-price="120000" data-date="2026-04-15" data-sold="200">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/kaos.jpg" alt="Kaos Polo IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-gold">Terlaris</span>
+            <button class="product-card-wishlist" aria-label="Wishlist" onclick="event.preventDefault();">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Kaos</div>
+            <h4 class="product-card-title">Kaos Polo IKAMABA</h4>
+            <div class="product-card-price">Rp 120.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html?id=3" class="product-card reveal stagger-3" data-category="Aksesoris" data-price="85000" data-date="2026-03-20" data-sold="95">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/totebag.png" alt="Totebag IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <button class="product-card-wishlist" aria-label="Wishlist" onclick="event.preventDefault();">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Aksesoris</div>
+            <h4 class="product-card-title">Totebag IKAMABA</h4>
+            <div class="product-card-price">Rp 85.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html?id=4" class="product-card reveal stagger-4" data-category="Aksesoris" data-price="35000" data-date="2026-02-10" data-sold="310">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/lanyard.jpg" alt="Lanyard IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-gold">Terlaris</span>
+            <button class="product-card-wishlist" aria-label="Wishlist" onclick="event.preventDefault();">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Aksesoris</div>
+            <h4 class="product-card-title">Lanyard IKAMABA</h4>
+            <div class="product-card-price">Rp 35.000</div>
+          </div>
+        </a>
+
+        <!-- Empty State -->
+        <div id="emptyState" style="display: none; grid-column: 1 / -1; text-align: center; padding: var(--space-12) 0;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">🔍</div>
+          <h3 style="font-family: var(--font-heading); font-size: var(--text-xl); margin-bottom: 0.5rem;">Produk tidak ditemukan</h3>
+          <p style="color: var(--gray-500);">Coba ubah kata kunci pencarian atau filter kategori.</p>
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="pagination reveal">
+        <button class="page-btn" disabled aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-logo" style="color:var(--white);">
+            <img src="assets/img/logo.svg" alt="IKAMABA">
+            <span>IKAMABA</span>
+          </a>
+          <p>Platform digital resmi organisasi IKAMABA. Wadah mahasiswa Batak untuk bersatu, berkarya, dan berdampak positif.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigasi</h4>
+          <div class="footer-links">
+            <a href="index.html">Beranda</a>
+            <a href="index.html#tentang">Tentang IKAMABA</a>
+            <a href="index.html#event">Event</a>
+            <a href="merch.html">Merch</a>
+            
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Bantuan</h4>
+          <div class="footer-links">
+            <a href="#">FAQ</a>
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat &amp; Ketentuan</a>
+            <a href="#">Kontak</a>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 IKAMABA. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat &amp; Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══ Mobile Bottom Nav ═══ -->
+  <nav class="bottom-nav" id="bottomNav">
+    <a href="index.html" class="bottom-nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Beranda
+    </a>
+    <a href="index.html#event" class="bottom-nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Event
+    </a>
+    <a href="merch.html" class="bottom-nav-item active"><svg...Store
+    </a>
+    
+    <a href="#" class="bottom-nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Akun
+    </a>
+  </nav>
+
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // ── Merchandise Page: Category Filtering, Search & Sort ──
+    (function() {
+      const tabBtns = document.querySelectorAll('#categoryTabs .tab-btn');
+      const productGrid = document.getElementById('productGrid');
+      const allCards = Array.from(productGrid.querySelectorAll('.product-card'));
+      const searchInput = document.getElementById('searchInput');
+      const sortSelect = document.getElementById('sortSelect');
+      const resultInfo = document.getElementById('resultInfo');
+      const emptyState = document.getElementById('emptyState');
+
+      let currentFilter = 'semua';
+
+      // Category tab click
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      // Search input
+      searchInput.addEventListener('input', () => {
+        applyFilters();
+      });
+
+      // Sort change
+      sortSelect.addEventListener('change', () => {
+        applyFilters();
+      });
+
+      function applyFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        let visibleCards = [];
+
+        allCards.forEach(card => {
+          const category = card.dataset.category;
+          const title = card.querySelector('.product-card-title').textContent.toLowerCase();
+          const categoryText = card.querySelector('.product-card-category').textContent.toLowerCase();
+
+          let matchCategory = currentFilter === 'semua' || category === currentFilter;
+          let matchSearch = !query || title.includes(query) || categoryText.includes(query);
+
+          if (matchCategory && matchSearch) {
+            card.style.display = '';
+            visibleCards.push(card);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Sort visible cards
+        const sortValue = sortSelect.value;
+        visibleCards.sort((a, b) => {
+          switch (sortValue) {
+            case 'harga-tinggi':
+              return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+            case 'harga-rendah':
+              return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+            case 'terlaris':
+              return parseInt(b.dataset.sold) - parseInt(a.dataset.sold);
+            case 'terbaru':
+            default:
+              return new Date(b.dataset.date) - new Date(a.dataset.date);
+          }
+        });
+
+        // Re-order DOM
+        visibleCards.forEach(card => {
+          productGrid.appendChild(card);
+        });
+
+        // Always keep empty state at end
+        productGrid.appendChild(emptyState);
+
+        // Update result info
+        if (visibleCards.length > 0) {
+          emptyState.style.display = 'none';
+          resultInfo.innerHTML = `Menampilkan <strong>${visibleCards.length}</strong> produk`;
+        } else {
+          emptyState.style.display = '';
+          resultInfo.innerHTML = `Tidak ada produk ditemukan`;
+        }
+      }
+
+      // Pagination demo (cosmetic)
+      const pageBtns = document.querySelectorAll('.pagination .page-btn');
+      pageBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.disabled) return;
+          pageBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran — IKAMABA Hub</title>
+  <link rel="stylesheet" href="assets/css/ikamaba.css">
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar navbar-dark" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logo.svg" alt="IKAMABA Logo">
+        <span>IKAMABA</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="index.html#tentang" class="nav-link">Tentang</a>
+        <a href="index.html#event" class="nav-link">Event</a>
+        <a href="merch.html" class="nav-link">Merch</a>
+        
+      </div>
+      <div class="nav-actions">
+        <a href="admin/login.html" class="btn btn-primary btn-sm hide-tablet">Login</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ BREADCRUMB ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span class="separator">/</span>
+        <a href="keranjang.html">Keranjang</a>
+        <span class="separator">/</span>
+        <span class="current">Pembayaran</span>
+      </nav>
+      <h1>Pembayaran Aman</h1>
+    </div>
+  </section>
+
+  <!-- ═══ CHECKOUT CONTENT ═══ -->
+  <section class="section">
+    <div class="container checkout-layout">
+      
+      <!-- Left Column: Steps -->
+      <div class="checkout-steps">
+        
+        <!-- Step 1: Data Diri -->
+        <div class="step-container" id="step1-container">
+          <div class="step-header active" id="step1-header">
+            <div class="step-number">1</div>
+            <div class="step-title">Informasi Data Diri</div>
+          </div>
+          <div class="step-content active" id="step1-content">
+            <form id="formPersonalInfo" onsubmit="event.preventDefault(); nextStep(2);">
+              <div class="form-group">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-input" required placeholder="Contoh: Ucok Dolok">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" required placeholder="ucok@email.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">No. Handphone / WA</label>
+                <input type="tel" class="form-input" required placeholder="081234567890">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Catatan Tambahan (Opsional)</label>
+                <textarea class="form-input" rows="3" placeholder="Contoh: Ukuran L untuk hoodie..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Lanjut ke Pembayaran</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Pembayaran -->
+        <div class="step-container" id="step2-container">
+          <div class="step-header" id="step2-header">
+            <div class="step-number">2</div>
+            <div class="step-title">Metode Pembayaran</div>
+          </div>
+          <div class="step-content" id="step2-content">
+            <p style="margin-bottom: var(--space-4); color: var(--gray-600);">Pilih metode pembayaran yang Anda inginkan:</p>
+            
+            <label class="payment-method-card">
+              <input type="radio" name="payment_method" value="bca" checked>
+              <div class="payment-icon" style="background:#0066AE; color:white;">BCA</div>
+              <div>
+                <strong style="display:block; font-family:var(--font-accent);">BCA Virtual Account</strong>
+                <span style="font-size:var(--text-sm); color:var(--gray-500);">Dicek otomatis</span>
+              </div>
+            </label>
+            
+            <label class="payment-method-card">
+              <input type="radio" name="payment_method" value="mandiri">
+              <div class="payment-icon" style="background:#003D79; color:white; font-size:8px;">MANDIRI</div>
+              <div>
+                <strong style="display:block; font-family:var(--font-accent);">Mandiri Virtual Account</strong>
+                <span style="font-size:var(--text-sm); color:var(--gray-500);">Dicek otomatis</span>
+              </div>
+            </label>
+
+            <label class="payment-method-card">
+              <input type="radio" name="payment_method" value="qris">
+              <div class="payment-icon" style="background:#ED1C24; color:white;">QRIS</div>
+              <div>
+                <strong style="display:block; font-family:var(--font-accent);">QRIS (Gopay, OVO, Dana)</strong>
+                <span style="font-size:var(--text-sm); color:var(--gray-500);">Bayar menggunakan aplikasi e-wallet</span>
+              </div>
+            </label>
+
+            <div style="display: flex; gap: var(--space-3); margin-top: var(--space-6);">
+              <button type="button" class="btn btn-ghost" onclick="nextStep(1)">Kembali</button>
+              <button type="button" class="btn btn-primary" onclick="processPayment()">Bayar Sekarang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Konfirmasi -->
+        <div class="step-container" id="step3-container" style="display: none;">
+          <div style="text-align: center; padding: var(--space-8) 0;">
+            <div style="width: 80px; height: 80px; background: var(--success-light); color: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2 style="font-family: var(--font-heading); margin-bottom: var(--space-2);">Pesanan Berhasil Dibuat!</h2>
+            <p style="color: var(--gray-600); margin-bottom: var(--space-6);">Terima kasih telah berbelanja di IKAMABA Hub. Order ID Anda: <strong style="color:var(--black);">#ORD-2026-1492</strong></p>
+            <div style="display: flex; justify-content: center; gap: var(--space-4);">
+              <a href="index.html" class="btn btn-ghost">Kembali ke Beranda</a>
+              <a href="dashboard-user.html" class="btn btn-primary">Lihat Status Pesanan</a>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /checkout-steps -->
+
+      <!-- Right Column: Summary -->
+      <div>
+        <div class="summary-sidebar">
+          <h3 style="font-family: var(--font-accent); font-weight: 700; font-size: var(--text-lg); margin-bottom: var(--space-4);">Ringkasan Pesanan</h3>
+          
+          <div id="checkoutItemsList" style="margin-bottom: var(--space-6); border-bottom: 1px solid var(--gray-200); padding-bottom: var(--space-4);">
+            <!-- Items injected by JS -->
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2);">
+            <span style="color: var(--gray-600);">Subtotal</span>
+            <span style="font-weight: 600;" id="checkoutSubtotal">Rp 0</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-4);">
+            <span style="color: var(--gray-600);">Biaya Layanan</span>
+            <span style="font-weight: 600;" id="checkoutFee">Rp 5.000</span>
+          </div>
+          
+          <div style="border-top: 1px dashed var(--gray-300); padding-top: var(--space-4); display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 700; font-size: var(--text-lg);">Total Tagihan</span>
+            <span style="font-weight: 700; font-size: var(--text-xl); color: var(--maroon);" id="checkoutTotal">Rp 0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 IKAMABA Hub. Hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Dummy Data untuk Presentasi
+    const cartItems = [
+      { id: '1', name: 'Hoodie IKAMABA', price: 250000, qty: 1, img: 'assets/img/hoodie.png' },
+      { id: '3', name: 'Totebag IKAMABA', price: 85000, qty: 4, img: 'assets/img/totebag.png' }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCheckoutSummary();
+    });
+
+    function renderCheckoutSummary() {
+      const listContainer = document.getElementById('checkoutItemsList');
+      
+      if (cartItems.length === 0) {
+        listContainer.innerHTML = '<p style="color:var(--gray-500); text-align:center;">Keranjang kosong.</p>';
+        return;
+      }
+
+      let subtotal = 0;
+      let html = '';
+
+      cartItems.forEach(item => {
+        const total = item.price * item.qty;
+        subtotal += total;
+        html += `
+          <div class="summary-item" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div class="summary-item-thumb" style="width: 50px; height: 50px; border-radius: var(--radius-sm); overflow: hidden; background: var(--gray-100); padding: 0;">
+              <img src="${item.img || 'assets/img/logo.png'}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1;">
+              <div style="font-family: var(--font-accent); font-weight: 600; font-size: var(--text-sm); line-height: 1.3; margin-bottom: 2px;">${item.name}</div>
+              <div style="font-size: var(--text-xs); color: var(--gray-500);">${item.qty} x Rp ${item.price.toLocaleString('id-ID')}</div>
+            </div>
+            <div style="font-weight: 600; font-size: var(--text-sm);">Rp ${total.toLocaleString('id-ID')}</div>
+          </div>
+        `;
+      });
+
+      listContainer.innerHTML = html;
+
+      const fee = 5000;
+      document.getElementById('checkoutSubtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+      document.getElementById('checkoutTotal').textContent = `Rp ${(subtotal + fee).toLocaleString('id-ID')}`;
+    }
+
+    function nextStep(step) {
+      if (step === 2) {
+        // Mark step 1 completed and active step 2
+        document.getElementById('step1-header').classList.remove('active');
+        document.getElementById('step1-header').classList.add('completed');
+        document.getElementById('step1-header').innerHTML = '<div class="step-number">✓</div><div class="step-title">Informasi Data Diri</div>';
+        document.getElementById('step1-content').classList.remove('active');
+
+        document.getElementById('step2-header').classList.add('active');
+        document.getElementById('step2-content').classList.add('active');
+        
+        window.scrollTo({ top: document.getElementById('step2-container').offsetTop - 100, behavior: 'smooth' });
+      } else if (step === 1) {
+        // Go back to step 1
+        document.getElementById('step2-header').classList.remove('active');
+        document.getElementById('step2-content').classList.remove('active');
+
+        document.getElementById('step1-header').classList.add('active');
+        document.getElementById('step1-header').classList.remove('completed');
+        document.getElementById('step1-header').innerHTML = '<div class="step-number">1</div><div class="step-title">Informasi Data Diri</div>';
+        document.getElementById('step1-content').classList.add('active');
+      }
+    }
+
+    function processPayment() {
+      if(cartItems.length === 0) {
+        showToast('Keranjang Anda kosong!', 'warning');
+        return;
+      }
+      
+      const btn = event.target;
+      btn.innerHTML = 'Memproses...';
+      btn.disabled = true;
+
+      // Simulate API call delay
+      setTimeout(() => {
+        // Hide Step 1 & 2 containers entirely
+        document.getElementById('step1-container').style.display = 'none';
+        document.getElementById('step2-container').style.display = 'none';
+        
+        // Show Step 3 (Success)
+        document.getElementById('step3-container').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
+
+
+
+

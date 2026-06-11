@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Admin IKAMABA Hub</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/ikamaba.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+
+</head>
+<body>
+
+  <!-- ========== Admin Layout ========== -->
+  <div class="admin-layout">
+
+    <!-- ── Admin Sidebar ── -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <!-- Logo -->
+      <a href="dashboard.html" class="admin-sidebar-logo">
+        <img src="../assets/img/logo.png" alt="IKAMABA">
+        <span>IKAMABA</span>
+      </a>
+
+      <!-- Menu Utama -->
+      <div class="admin-sidebar-label">MENU UTAMA</div>
+      <nav class="admin-nav">
+        <a href="dashboard.html" class="admin-nav-item active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="kelola-event.html" class="admin-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          Kelola Event
+        </a>
+        <a href="kelola-produk.html" class="admin-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          Kelola Produk
+        </a>
+        <a href="kelola-transaksi.html" class="admin-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Kelola Transaksi
+        </a>
+      </nav>
+
+      <!-- Lainnya -->
+      <div class="admin-sidebar-label" style="margin-top: var(--space-6);">LAINNYA</div>
+      <nav class="admin-nav">
+        <a href="profil.html" class="admin-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Profil Admin
+        </a>
+        <a href="../index.html" class="admin-nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Kembali ke Site
+        </a>
+        <a href="logout.html" class="admin-nav-item" style="color: var(--danger);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ── Admin Main ── -->
+    <main class="admin-main">
+
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <!-- Mobile sidebar toggle -->
+          <button class="admin-sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="admin-topbar-title">
+            <h2>Dashboard</h2>
+            <p>Selamat datang, Admin</p>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <!-- Search -->
+          <div class="admin-topbar-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Cari sesuatu...">
+          </div>
+          <!-- Notification -->
+          <button class="admin-notification-btn" aria-label="Notifications">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="dot"></span>
+          </button>
+          <!-- Admin Avatar -->
+          <div class="admin-avatar">
+            <div class="admin-avatar-info">
+              <div class="admin-avatar-name">Panitia IKAMABA</div>
+              <div class="admin-avatar-role">Super Admin</div>
+            </div>
+            <div class="admin-avatar-initials">AD</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="admin-content">
+
+        <!-- ── Welcome Banner ── -->
+        <div class="welcome-banner reveal">
+          <h1>Horas, Panitia IKAMABA! 👋</h1>
+          <p>Berikut ringkasan aktivitas IKAMABA Hub hari ini.</p>
+          <div class="date-display">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span id="currentDate">Selasa, 3 Juni 2026</span>
+          </div>
+        </div>
+
+        <!-- ── Stats Grid ── -->
+        <div class="admin-stats-grid">
+          <!-- Total Event -->
+          <div class="stat-card reveal stagger-1">
+            <div class="stat-card-icon maroon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="stat-card-value">24</div>
+            <div class="stat-card-label">Total Event</div>
+            <div class="stat-card-trend up">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              +2 Baru
+            </div>
+          </div>
+
+          <!-- Total Transaksi -->
+          <div class="stat-card reveal stagger-2">
+            <div class="stat-card-icon gold">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <div class="stat-card-value">856</div>
+            <div class="stat-card-label">Total Transaksi</div>
+            <div class="stat-card-trend up">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              +8.2%
+            </div>
+          </div>
+
+          <!-- Pendapatan -->
+          <div class="stat-card reveal stagger-3">
+            <div class="stat-card-icon success">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="stat-card-value">Rp 45.2 Jt</div>
+            <div class="stat-card-label">Pendapatan</div>
+            <div class="stat-card-trend up">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              +15.3%
+            </div>
+          </div>
+
+          <!-- Produk Terjual -->
+          <div class="stat-card reveal stagger-4">
+            <div class="stat-card-icon info">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="stat-card-value">1,532</div>
+            <div class="stat-card-label">Produk Terjual</div>
+            <div class="stat-card-trend up">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              +18.4%
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 2-Column Grid ── -->
+        <div class="admin-grid-2">
+
+          <!-- Left: Revenue Chart -->
+          <div class="admin-chart reveal">
+            <div class="admin-chart-header">
+              <h3>Pendapatan Bulanan</h3>
+              <select class="form-select" style="width:auto; padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3); font-size: var(--text-xs);">
+                <option>2026</option>
+                <option>2026</option>
+              </select>
+            </div>
+            <div class="chart-bars">
+              <div class="chart-bar" style="height:40%;" data-value="Rp 2.1 Jt"></div>
+              <div class="chart-bar" style="height:55%;" data-value="Rp 2.9 Jt"></div>
+              <div class="chart-bar" style="height:45%;" data-value="Rp 2.4 Jt"></div>
+              <div class="chart-bar" style="height:70%;" data-value="Rp 3.7 Jt"></div>
+              <div class="chart-bar" style="height:85%;" data-value="Rp 4.5 Jt"></div>
+              <div class="chart-bar" style="height:95%;" data-value="Rp 5.0 Jt"></div>
+              <div class="chart-bar" style="height:75%;" data-value="Rp 3.9 Jt"></div>
+              <div class="chart-bar" style="height:60%;" data-value="Rp 3.2 Jt"></div>
+              <div class="chart-bar" style="height:80%;" data-value="Rp 4.2 Jt"></div>
+              <div class="chart-bar" style="height:65%;" data-value="Rp 3.4 Jt"></div>
+              <div class="chart-bar" style="height:90%;" data-value="Rp 4.8 Jt"></div>
+              <div class="chart-bar" style="height:100%;" data-value="Rp 5.3 Jt"></div>
+            </div>
+            <div class="chart-labels">
+              <span class="chart-label">Jan</span>
+              <span class="chart-label">Feb</span>
+              <span class="chart-label">Mar</span>
+              <span class="chart-label">Apr</span>
+              <span class="chart-label">Mei</span>
+              <span class="chart-label">Jun</span>
+              <span class="chart-label">Jul</span>
+              <span class="chart-label">Agt</span>
+              <span class="chart-label">Sep</span>
+              <span class="chart-label">Okt</span>
+              <span class="chart-label">Nov</span>
+              <span class="chart-label">Des</span>
+            </div>
+          </div>
+
+          <!-- Right: Quick Actions + Recent Activity -->
+          <div class="reveal stagger-2">
+            <!-- Quick Actions -->
+            <div class="quick-actions-card">
+              <h3>Aksi Cepat</h3>
+              <div class="quick-actions">
+                <a href="kelola-event.html" class="quick-action-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Tambah Event
+                </a>
+                <a href="kelola-transaksi.html" class="quick-action-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Lihat Transaksi
+                </a>
+              </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity-card">
+              <h3>Aktivitas Terbaru</h3>
+              <div class="recent-list">
+                <!-- Activity 1 -->
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background: var(--success-light); color: var(--success);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                  </div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Transaksi baru #ORD-2026-089</div>
+                    <div class="recent-item-meta">Pembayaran diterima — 5 menit lalu</div>
+                  </div>
+                  <div class="recent-item-value" style="color: var(--success);">+Rp 185K</div>
+                </div>
+                <!-- Activity 2 -->
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background: var(--info-light); color: var(--info);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  </div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Pesanan #ORD-2026-1480 Selesai</div>
+                    <div class="recent-item-meta">Terkonfirmasi otomatis — 18 menit lalu</div>
+                  </div>
+                </div>
+                <!-- Activity 3 -->
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background: var(--maroon-100); color: var(--maroon);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                  </div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Event baru dipublikasi</div>
+                    <div class="recent-item-meta">"Seminar Budaya Batak" — 1 jam lalu</div>
+                  </div>
+                </div>
+                <!-- Activity 4 -->
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background: var(--gold-50); color: var(--gold-dark);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+                  </div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Produk Merch Terjual</div>
+                    <div class="recent-item-meta">4 Totebag IKAMABA — 2 jam lalu</div>
+                  </div>
+                  <div class="recent-item-value" style="color: var(--success);">+Rp 400K</div>
+                </div>
+                <!-- Activity 5 -->
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background: var(--warning-light); color: var(--warning);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                  </div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Stok produk rendah</div>
+                    <div class="recent-item-meta">Ulos Sadum — tersisa 3 pcs — 3 jam lalu</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /admin-grid-2 -->
+
+        <!-- ── Recent Orders Table ── -->
+        <div class="table-wrapper reveal" style="margin-top: var(--space-8);">
+          <div class="table-section-header">
+            <h3>Transaksi Terbaru</h3>
+            <a href="kelola-transaksi.html" class="btn btn-ghost btn-sm">
+              Lihat Semua
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Pelanggan</th>
+                <th>Produk</th>
+                <th>Total</th>
+                <th>Tanggal</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#ORD-2026-1492</strong></td>
+                <td>Ucok Dolok</td>
+                <td>Hoodie IKAMABA & 1 Produk Lainnya</td>
+                <td>Rp 595.000</td>
+                <td>12 Jun 2026</td>
+                <td><span class="badge badge-info">Sedang Diproses</span></td>
+                <td><a href="kelola-transaksi.html" class="btn btn-ghost btn-sm">Konfirmasi</a></td>
+              </tr>
+              <tr>
+                <td><strong>#ORD-2026-1300</strong></td>
+                <td>Raja Simbolon</td>
+                <td>Kaos Polo IKAMABA</td>
+                <td>Rp 150.000</td>
+                <td>02 Mei 2026</td>
+                <td><span class="badge badge-success">Selesai</span></td>
+                <td><a href="kelola-transaksi.html" class="btn btn-ghost btn-sm">Detail</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /table-wrapper -->
+
+      </div><!-- /admin-content -->
+    </main><!-- /admin-main -->
+
+  </div><!-- /admin-layout -->
+
+
+  <!-- ========== JavaScript ========== -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // ── Sidebar Mobile Toggle ──
+    (function() {
+      const sidebar = document.getElementById('adminSidebar');
+      const toggle = document.getElementById('sidebarToggle');
+      const overlay = document.getElementById('sidebarOverlay');
+
+      if (toggle && sidebar) {
+        toggle.addEventListener('click', () => {
+          sidebar.classList.toggle('open');
+          if (overlay) overlay.classList.toggle('active');
+          document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        });
+      }
+
+      if (overlay) {
+        overlay.addEventListener('click', () => {
+          sidebar.classList.remove('open');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    })();
+
+    // ── Dynamic Date Display ──
+    (function() {
+      const dateEl = document.getElementById('currentDate');
+      if (dateEl) {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateEl.textContent = now.toLocaleDateString('id-ID', options);
+      }
+    })();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

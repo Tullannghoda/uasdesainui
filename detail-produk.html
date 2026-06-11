@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detail Produk — Beli di IKAMABA Hub Store.">
+  <title>Detail Produk — IKAMABA Hub</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/ikamaba.css">
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar navbar-dark" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/img/logo.svg" alt="IKAMABA Logo">
+        <span>IKAMABA</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="index.html#tentang" class="nav-link">Tentang</a>
+        <a href="index.html#event" class="nav-link">Event</a>
+        <a href="merch.html" class="nav-link active">Merch</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="keranjang.html" class="nav-cart-btn" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" style="display:none;">0</span>
+        </a>
+        <a href="admin/login.html" class="btn btn-primary btn-sm hide-tablet">Login</a>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <a href="index.html#tentang" class="nav-link">Tentang</a>
+    <a href="index.html#event" class="nav-link">Event</a>
+    <a href="merch.html" class="nav-link active">Merch</a>
+    <a href="admin/login.html" class="btn btn-primary" style="margin-top:1rem;">Login</a>
+  </div>
+
+
+  <!-- ═══ BREADCRUMB ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span class="separator">/</span>
+        <a href="merch.html">Merch</a>
+        <span class="separator">/</span>
+        <span class="current" id="breadcrumbName">Memuat...</span>
+      </nav>
+      <h1 id="pageTitle">Memuat...</h1>
+    </div>
+  </section>
+
+
+  <!-- ═══ DETAIL PRODUK ═══ -->
+  <section class="detail-section section" style="background:var(--white);">
+    <div class="container">
+      <div class="detail-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-12); align-items:start;">
+
+        <!-- Left: Gallery -->
+        <div class="detail-gallery reveal">
+          <div class="detail-main-img" style="border-radius:var(--radius-lg); overflow:hidden;">
+            <img id="prodImage" src="assets/img/logo.png" alt="Produk" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+          </div>
+        </div>
+
+        <!-- Right: Info -->
+        <div class="detail-info reveal stagger-1" style="display:flex; flex-direction:column; gap:var(--space-6);">
+          <div>
+            <span class="badge badge-maroon" id="prodCategory" style="margin-bottom:10px;">Kategori</span>
+            <h1 id="prodName" style="font-size:var(--text-3xl); margin-bottom:10px;">Nama Produk</h1>
+            <div class="detail-price" id="prodPrice" style="font-family:var(--font-heading); font-size:var(--text-2xl); color:var(--maroon); font-weight:700;">Rp 0</div>
+          </div>
+
+          <div class="detail-stats" style="display:flex; gap:20px; padding:15px 0; border-top:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200);">
+            <div class="detail-stat">
+              <div class="detail-stat-value" style="font-weight:700;">100+</div>
+              <div class="detail-stat-label" style="font-size:0.875rem; color:var(--gray-500);">Terjual</div>
+            </div>
+            <div class="detail-stat">
+              <div class="detail-stat-value" style="font-weight:700;">★ 4.9</div>
+              <div class="detail-stat-label" style="font-size:0.875rem; color:var(--gray-500);">Rating</div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size:var(--text-lg); margin-bottom:10px;">Deskripsi Produk</h3>
+            <p class="detail-desc" id="prodDesc" style="color:var(--gray-700); line-height:1.6;">
+              Memuat deskripsi...
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size:var(--text-lg); margin-bottom:10px;">Fitur & Spesifikasi</h3>
+            <ul id="prodFeatures" style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; color:var(--gray-700);">
+              <!-- Diisi oleh JS -->
+            </ul>
+          </div>
+
+          <!-- Quantity & Stock -->
+          <div style="background:var(--gray-50); padding:20px; border-radius:var(--radius-lg); display:flex; flex-direction:column; gap:15px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:600;">Jumlah</span>
+              <span class="badge badge-success" id="prodStock">Stok Tersedia</span>
+            </div>
+            
+            <div class="qty-selector" style="display:flex; align-items:center; background:white; border:1px solid var(--gray-300); border-radius:var(--radius-md); width:fit-content; overflow:hidden;">
+              <button type="button" class="qty-btn" id="qtyMinus" style="padding:10px 15px; border:none; background:none; cursor:pointer; font-size:1.2rem;">−</button>
+              <input type="number" id="qtyValue" value="1" min="1" readonly style="width:50px; text-align:center; border:none; font-weight:600;">
+              <button type="button" class="qty-btn" id="qtyPlus" style="padding:10px 15px; border:none; background:none; cursor:pointer; font-size:1.2rem;">+</button>
+            </div>
+
+            <!-- Actions -->
+            <div class="detail-actions" style="display:flex; gap:10px; margin-top:10px;">
+              <button class="btn btn-primary" id="addToCartBtn" style="flex:1; display:flex; justify-content:center; align-items:center; gap:8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Tambah ke Keranjang
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ RELATED PRODUCTS ═══ -->
+  <section class="related-section section" style="background:var(--cream);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Baca Juga</span>
+        <h2>Produk Lainnya</h2>
+        <p>Lihat juga koleksi merchandise resmi IKAMABA lainnya.</p>
+      </div>
+
+      <div class="merch-products-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:var(--space-6);">
+        <a href="detail-produk.html?id=2" class="product-card reveal stagger-1">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/kaos.jpg" alt="Kaos Polo IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-gold">Terlaris</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Kaos</div>
+            <h4 class="product-card-title">Kaos Polo IKAMABA</h4>
+            <div class="product-card-price">Rp 120.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html?id=3" class="product-card reveal stagger-2">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/totebag.png" alt="Totebag IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Aksesoris</div>
+            <h4 class="product-card-title">Totebag IKAMABA</h4>
+            <div class="product-card-price">Rp 85.000</div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html?id=4" class="product-card reveal stagger-3">
+          <div class="product-card-img-wrap">
+            <img src="assets/img/lanyard.jpg" alt="Lanyard IKAMABA" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+            <span class="product-card-badge badge badge-gold">Terlaris</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Aksesoris</div>
+            <h4 class="product-card-title">Lanyard IKAMABA</h4>
+            <div class="product-card-price">Rp 35.000</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 IKAMABA Hub. Hak cipta dilindungi.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // 1. DATA PRODUK (Simulasi Database)
+    const products = [
+      { id: 1, name: 'Hoodie IKAMABA', price: 250000, category: 'Hoodie', desc: 'Hoodie eksklusif IKAMABA dengan bahan katun fleece premium. Nyaman dipakai sehari-hari untuk kuliah maupun sekadar jalan santai. Tersedia dalam potongan regular fit yang cocok untuk pria dan wanita.', stock: 'Tersedia', img: 'assets/img/hoodie.png', features: ['Bahan Cotton Fleece tebal dan lembut', 'Sablon plastisol awet, tidak mudah pecah', 'Tersedia ukuran S, M, L, XL', 'Gratis stiker pack eksklusif IKAMABA'] },
+      { id: 2, name: 'Kaos Polo IKAMABA', price: 120000, category: 'Kaos', desc: 'Kaos polo dengan logo IKAMABA bordir komputer yang sangat rapi. Sangat cocok digunakan untuk acara semi-formal, rapat organisasi, maupun kegiatan santai sehari-hari.', stock: 'Tersedia', img: 'assets/img/kaos.jpg', features: ['Bahan Lacoste Pique', 'Bordir logo presisi', 'Adem dan mudah menyerap keringat', 'Ukuran regular fit, potongan rapi'] },
+      { id: 3, name: 'Totebag IKAMABA', price: 85000, category: 'Aksesoris', desc: 'Totebag kanvas tebal dengan desain modern IKAMABA. Kuat untuk membawa laptop 14 inch, buku catatan tebal, dan barang bawaan harian lainnya tanpa takut robek.', stock: 'Tersedia', img: 'assets/img/totebag.png', features: ['Bahan Kanvas Tebal berkualitas', 'Sablon polyflex tahan lama', 'Terdapat resleting untuk keamanan', 'Ukuran besar 35x40 cm'] },
+      { id: 4, name: 'Lanyard IKAMABA', price: 35000, category: 'Aksesoris', desc: 'Lanyard eksklusif dan keren untuk menggantung ID Card mahasiswa, panitia, atau sekadar menggantung kunci motor. Desain khas corak Batak modern.', stock: 'Tersedia', img: 'assets/img/lanyard.jpg', features: ['Bahan tissue halus di leher', 'Print sublim full color luar dalam', 'Terdapat stopper bisa dilepas pasang', 'Panjang standar 90cm'] }
+    ];
+
+    // 2. MENGAMBIL ID DARI URL (Contoh: detail-produk.html?id=1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id')) || 1;
+    
+    // Cari produk berdasarkan ID, jika tidak ketemu kembali ke produk ID 1
+    const product = products.find(p => p.id === productId) || products[0];
+
+    // 3. INJEKSI DATA KE HTML DOM
+    document.getElementById('breadcrumbName').textContent = product.name;
+    document.getElementById('pageTitle').textContent = product.name;
+    document.getElementById('prodCategory').textContent = product.category;
+    document.getElementById('prodName').textContent = product.name;
+    document.getElementById('prodPrice').textContent = 'Rp ' + product.price.toLocaleString('id-ID');
+    document.getElementById('prodDesc').textContent = product.desc;
+    document.getElementById('prodImage').src = product.img;
+    document.getElementById('prodStock').textContent = product.stock;
+    
+    // Injeksi list fitur (bullet points)
+    const featuresList = document.getElementById('prodFeatures');
+    featuresList.innerHTML = '';
+    product.features.forEach(f => {
+      const li = document.createElement('li');
+      li.style.display = 'flex';
+      li.style.alignItems = 'center';
+      li.style.gap = '10px';
+      li.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> ' + f;
+      featuresList.appendChild(li);
+    });
+
+    // 4. LOGIC JUMLAH (QTY) & ADD TO CART
+    const qtyMinus = document.getElementById('qtyMinus');
+    const qtyPlus = document.getElementById('qtyPlus');
+    const qtyValue = document.getElementById('qtyValue');
+
+    qtyMinus.addEventListener('click', () => {
+      let val = parseInt(qtyValue.value);
+      if (val > 1) qtyValue.value = val - 1;
+    });
+
+    qtyPlus.addEventListener('click', () => {
+      let val = parseInt(qtyValue.value);
+      if (val < 10) qtyValue.value = val + 1; // max beli 10
+    });
+
+    document.getElementById('addToCartBtn').addEventListener('click', function() {
+      const qty = parseInt(qtyValue.value) || 1;
+      showToast(qty + 'x ' + product.name + ' berhasil ditambahkan!', 'success');
+      
+      // Redirect to keranjang after a short delay
+      setTimeout(() => {
+        window.location.href = 'keranjang.html';
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

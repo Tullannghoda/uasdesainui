@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk — IKAMABA Hub</title>
+  <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/ikamaba.css">
+
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LOGIN PAGE
+       ══════════════════════════════════════════════════════════ -->
+  <main class="login-page">
+
+
+
+    <!-- Decorative Elements -->
+    <div class="login-decoration login-decoration-1"></div>
+    <div class="login-decoration login-decoration-2"></div>
+    <div class="login-decoration login-decoration-3"></div>
+    <div class="login-decoration login-decoration-4"></div>
+
+    <!-- Gorga Dot Patterns -->
+    <div class="gorga-dots">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="gorga-dots-2">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ── Login Card ── -->
+    <div class="login-card">
+
+      <!-- Logo -->
+      <a href="../index.html" class="login-logo">
+        <img src="../assets/img/logo.svg" alt="IKAMABA Logo">
+        <span class="text-maroon">IKAMABA</span>
+      </a>
+
+      <!-- ──────────────────────────────────
+           LOGIN FORM
+           ────────────────────────────────── -->
+      <div class="login-form-panel active" id="loginPanel">
+        
+
+        <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+          <div style="color: red; margin-bottom: 1rem; text-align: center;"></div>
+          <!-- Username -->
+          <div class="form-group">
+            <label class="form-label" for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" name="username" class="form-input" placeholder="adminbatak" value="adminbatak" required autocomplete="username">
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <div class="password-wrapper" style="position: relative;">
+              <input type="password" id="loginPassword" name="password" class="form-input" placeholder="admin123" value="admin123" required autocomplete="current-password" style="padding-right: 40px; width: 100%; box-sizing: border-box;">
+              <button type="button" class="password-toggle" data-target="loginPassword" aria-label="Tampilkan password" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--gray-500); padding: 0; display: flex;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-off-icon" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-primary w-full btn-lg" style="width: 100%; justify-content: center;">
+            Masuk
+          </button>
+          
+          <!-- Back to Home (Clean Placement) -->
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="../index.html" style="color: var(--gray-500); font-size: var(--text-sm); display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              Kembali ke Beranda
+            </a>
+          </div>
+        </form>
+      </div> <!-- Akhir login-form-panel -->
+    </div> <!-- Akhir login-card -->
+  </main>
+
+  <script>
+    // Fitur Mata (Show/Hide Password)
+    const toggleBtn = document.querySelector('.password-toggle');
+    const passwordInput = document.getElementById('loginPassword');
+    const eyeIcon = document.querySelector('.eye-icon');
+    const eyeOffIcon = document.querySelector('.eye-off-icon');
+
+    if (toggleBtn && passwordInput) {
+      toggleBtn.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          eyeIcon.style.display = 'none';
+          eyeOffIcon.style.display = 'block';
+        } else {
+          passwordInput.type = 'password';
+          eyeIcon.style.display = 'block';
+          eyeOffIcon.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
