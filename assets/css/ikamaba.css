@@ -3659,6 +3659,9 @@ html {
     @media (max-width: 768px) {
       .events-grid { grid-template-columns: 1fr; }
     }
+    @media (max-width: 480px) {
+      .events-grid { grid-template-columns: 1fr; }
+    }
 
     /* ── BatakFest CTA Section ── */
     .batakfest-cta {
@@ -3809,6 +3812,9 @@ html {
     }
     @media (max-width: 768px) {
       .merch-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .merch-grid { grid-template-columns: 1fr; }
     }
 
 
@@ -4594,8 +4600,8 @@ html {
 
     @media (max-width: 480px) {
       .related-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-3);
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
       }
     }
 
@@ -4761,8 +4767,8 @@ html {
 
     @media (max-width: 480px) {
       .merch-products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-3);
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
       }
       .product-card-body {
         padding: var(--space-3);
