@@ -91,7 +91,7 @@ function initNavbar() {
 
 // ── Scroll Reveal Animation ──
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-flip');
   if (!revealElements.length) return;
 
   const observer = new IntersectionObserver((entries) => {

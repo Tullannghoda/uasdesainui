@@ -1158,43 +1158,62 @@ p {
   to { transform: rotate(360deg); }
 }
 
-/* Scroll reveal (Disabled for simpler student project look) */
-.reveal {
-  opacity: 1;
-  transform: none;
+/* ── Scroll Reveal Animations ── */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-flip {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: none;
+.reveal {
+  transform: translateY(40px);
 }
 
 .reveal-left {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-left.visible {
-  opacity: 1;
-  transform: none;
+  transform: translateX(-50px);
 }
 
 .reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal-scale {
+  transform: scale(0.85);
+}
+
+.reveal-flip {
+  transform: perspective(600px) rotateX(15deg) translateY(30px);
+}
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible,
+.reveal-flip.visible {
   opacity: 1;
   transform: none;
 }
 
-.reveal-right.visible {
-  opacity: 1;
-  transform: none;
-}
-
+/* Stagger delays for sequential card animation */
 .stagger-1 { transition-delay: 0.1s; }
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 .stagger-5 { transition-delay: 0.5s; }
 .stagger-6 { transition-delay: 0.6s; }
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-flip {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 
 /* ── Utility ── */
