@@ -442,6 +442,155 @@ function setActiveNavLink() {
 }
 
 
+// ── 1. Smooth Counter Animation for Hero Stats ──
+function initCounterAnimation() {
+  const statEls = document.querySelectorAll('.hero-stat-value');
+  if (!statEls.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        observer.unobserve(el);
+
+        const raw = el.textContent.trim();
+        const hasPrefix = raw.startsWith('+');
+        const hasSuffix = raw.endsWith('+');
+        const num = parseInt(raw.replace(/[^0-9]/g, ''), 10);
+        if (isNaN(num)) return;
+
+        const prefix = hasPrefix ? '+' : '';
+        const suffix = hasSuffix ? '+' : '';
+        const duration = 2000;
+        let start = null;
+
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          // Ease-out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * num);
+          el.textContent = prefix + current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  statEls.forEach(el => observer.observe(el));
+}
+
+
+// ── 2. Parallax Effect on Hero Decoration ──
+function initHeroParallax() {
+  const decorations = document.querySelectorAll('.hero-decoration');
+  if (!decorations.length) return;
+
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+      decorations.forEach((dec, i) => {
+        const speed = (i + 1) * 0.04;
+        dec.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+
+// ── 3. Tilt Effect on Product Cards ──
+function initProductTilt() {
+  const cards = document.querySelectorAll('.product-card');
+  if (!cards.length) return;
+
+  const maxDeg = 3;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;   // 0 → 1
+      const y = (e.clientY - rect.top) / rect.height;    // 0 → 1
+      const rotateX = (0.5 - y) * maxDeg * 2;  // tilt up/down
+      const rotateY = (x - 0.5) * maxDeg * 2;  // tilt left/right
+      card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+
+// ── 4. Gallery Lightbox ──
+function initGalleryLightbox() {
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  if (!galleryItems.length) return;
+
+  // Create overlay once
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = `
+    <button class="lightbox-close" aria-label="Close lightbox">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img class="lightbox-img" src="" alt="Gallery preview">
+  `;
+  document.body.appendChild(overlay);
+
+  const lightboxImg = overlay.querySelector('.lightbox-img');
+  const closeBtn = overlay.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Gallery image';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  galleryItems.forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(img.src, img.alt);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
+
+
+// ── 5. Typing Cursor on Hero Title (CSS-driven, just adds class) ──
+function initHeroTypingCursor() {
+  const heroTitle = document.querySelector('.hero-title');
+  if (!heroTitle) return;
+  heroTitle.classList.add('typing-cursor');
+}
+
+
 // ── Initialize Everything ──
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -453,4 +602,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   setActiveNavLink();
   Cart.updateBadge();
+
+  // Micro-interactions
+  initCounterAnimation();
+  initHeroParallax();
+  initProductTilt();
+  initGalleryLightbox();
+  initHeroTypingCursor();
 });

@@ -8,14 +8,14 @@ Proyek tugas akhir mata kuliah UI/UX: Membangun platform digital untuk Ikatan Ma
 - **Mockup Back-Office (Admin)**: UI Panel Admin untuk mengelola data website.
 - **Integrasi CMS WordPress**: Fitur Blog/Artikel dikelola langsung menggunakan CMS WordPress.
 
-## 🛠️ Cara Menjalankan Proyek (Localhost)
+## 🛠️ Cara Menjalankan Proyek
 
 Karena proyek ini menggunakan integrasi **WordPress CMS**, maka dibutuhkan web server lokal (seperti **Laragon** atau **XAMPP**) yang memiliki PHP dan MySQL.
 
-### Langkah-langkah Setup (Bagi Dosen Penilai):
+### Langkah-langkah Setup:
 1. Pindahkan folder proyek ini (yang berisi halaman HTML statis) ke dalam folder `htdocs` (jika pakai XAMPP) atau `www` (jika pakai Laragon).
 2. Proyek ini terhubung ke *instance* WordPress lokal dengan *path* `http://localhost/blog-ikamaba/`. 
-3. Buat database baru di MySQL (misal via phpMyAdmin) dengan nama `blog_ikamaba`.
+3. Buat database baru di MySQL (cth via phpMyAdmin) dengan nama `blog_ikamaba`.
 4. Import file `database_blog_ikamaba.sql` yang ada di folder utama proyek ini ke dalam database yang baru dibuat tersebut.
 5. Buka browser dan akses halaman utama statis:
    ```
